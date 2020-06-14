@@ -1,0 +1,13 @@
+Welcome to the WFRP combat looker-upper for WFRP v2!
+
+The goal of this application is to take the burden of looking up numbers and effects off of you, the player or GM, so that you can focus more of your energy on the roleplaying that makes the game fun.
+
+Instructions:
+- Roll 2d10 to hit, accounting for any special bonuses or penalties, and compare with your WS or BS characteristics, as normal.
+- Calculate damage, again accounting for SB and weapon bonus, TB and armor, Ulrich's fury, remaining wounds, and anything else you would normally.
+- Enter the number you rolled to hit and the amount of critical damage (zero if it wasn't a critical hit) and press calculate.
+
+That's it! That's all you have to do to get the hit location and critical-hit effect.
+
+Made with Godot 3.1.1
+Elaine Jeffery, 2020
