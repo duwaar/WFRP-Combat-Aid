@@ -10,9 +10,9 @@ var message = ""
 
 
 func _ready():
-	crit_effects = load_from_json("res://critical_effects.json")
-	crit_values = load_from_json("res://critical_values.json")
-	hit_locations = load_from_json("res://hit_locations.json")
+	crit_effects = load_from_json("res://resources/critical_effects.json")
+	crit_values = load_from_json("res://resources/critical_values.json")
+	hit_locations = load_from_json("res://resources/hit_locations.json")
 	randomize() # Generate a new seed for the random number generator
 
 

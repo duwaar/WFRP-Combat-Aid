@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://App.gd" type="Script" id=1]
-[ext_resource path="res://ControlPanel.gd" type="Script" id=2]
-[ext_resource path="res://HitBox.gd" type="Script" id=3]
-[ext_resource path="res://DamageBox.gd" type="Script" id=4]
-[ext_resource path="res://HelpPage.gd" type="Script" id=5]
+[ext_resource path="res://scripts/App.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ControlPanel.gd" type="Script" id=2]
+[ext_resource path="res://scripts/HitBox.gd" type="Script" id=3]
+[ext_resource path="res://scripts/DamageBox.gd" type="Script" id=4]
+[ext_resource path="res://scripts/HelpPage.gd" type="Script" id=5]
 
 [node name="App" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,7 +13,6 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Panel" parent="ControlPanel"]
-editor/display_folded = true
 show_behind_parent = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,9 +29,9 @@ __meta__ = {
 [node name="TextArea" type="Label" parent="ControlPanel/Title"]
 margin_left = 10.0
 margin_top = 5.0
-margin_right = 290.0
+margin_right = 310.0
 margin_bottom = 25.0
-text = "WFRP Critical Effect Lookup Tool"
+text = "WFRP Combat Roller"
 align = 1
 valign = 1
 
