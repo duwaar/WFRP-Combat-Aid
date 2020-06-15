@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ValueInput.gd" type="Script" id=1]
+
+[node name="ValueInput" type="VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+title = "Title:"
+tens_buttons = true
+ones_buttons = true
+
+[node name="TopContainer" type="HBoxContainer" parent="."]
+margin_right = 134.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="TopContainer"]
+margin_right = 56.0
+margin_bottom = 24.0
+size_flags_horizontal = 11
+size_flags_vertical = 11
+text = "Title:"
+align = 2
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="TopContainer"]
+margin_left = 60.0
+margin_right = 134.0
+margin_bottom = 24.0
+size_flags_horizontal = 11
+size_flags_vertical = 11
+
+[node name="BottomContainer" type="HBoxContainer" parent="."]
+margin_top = 28.0
+margin_right = 134.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Min10" type="Button" parent="BottomContainer"]
+margin_right = 33.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "-10"
+
+[node name="Min1" type="Button" parent="BottomContainer"]
+margin_left = 37.0
+margin_right = 62.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "-1"
+
+[node name="Plus1" type="Button" parent="BottomContainer"]
+margin_left = 66.0
+margin_right = 94.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+1"
+
+[node name="Plus10" type="Button" parent="BottomContainer"]
+margin_left = 98.0
+margin_right = 134.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+10"
+[connection signal="button_up" from="BottomContainer/Min10" to="." method="_on_Min10_button_up"]
+[connection signal="button_up" from="BottomContainer/Min1" to="." method="_on_Min1_button_up"]
+[connection signal="button_up" from="BottomContainer/Plus1" to="." method="_on_Plus1_button_up"]
+[connection signal="button_up" from="BottomContainer/Plus10" to="." method="_on_Plus10_button_up"]
