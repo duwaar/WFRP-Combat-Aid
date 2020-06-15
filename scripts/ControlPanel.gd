@@ -1,7 +1,5 @@
 extends Node2D
 
-
-var hit_locations
 var crit_effects
 var crit_values
 var timer = 0.0
@@ -9,13 +7,15 @@ var printed = false
 var message = ""
 
 
+
+func load_from_json(path):
+	return $"/root/global".load_from_json(path)
+
 func _ready():
 	crit_effects = load_from_json("res://resources/critical_effects.json")
 	crit_values = load_from_json("res://resources/critical_values.json")
-	hit_locations = load_from_json("res://resources/hit_locations.json")
-	randomize() # Generate a new seed for the random number generator
-
-
+	
+	
 func _process(delta):
 	if not printed:
 		timer -= delta
@@ -25,33 +25,12 @@ func _process(delta):
 			printed = true
 
 
-func load_from_json(path):
-	var file = File.new()
-	file.open(path, file.READ)
-	var json_object = JSON.parse(file.get_as_text())
-	file.close()
-	
-	if json_object.error == OK:
-		return json_object.result
-	else:
-		print("Error " + str(json_object.error) + " on line " + str(json_object.error_line) + ": " + str(json_object.error_string))
-		return {}
-
-
 func d10():
-	return floor(randf() * 10)
+	return $"/root/global".d10()
 
 
 func get_hit_location(hit_roll):
-	# Swap the digits from the to-hit roll.
-	var digit_10 = floor(hit_roll / 10)
-	var digit_1 = hit_roll % 10
-	var location_roll = digit_1 * 10 + digit_10
-	
-	if location_roll == 0:
-		location_roll = 100
-	
-	return str(hit_locations[location_roll - 1])
+	return $"/root/global".get_hit_location(hit_roll)
 
 
 func get_critical_value(crit_damage, percent):
