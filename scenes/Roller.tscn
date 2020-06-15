@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ValueInput.tscn" type="PackedScene" id=1]
+
+[node name="Roller" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 30.0
+margin_right = 265.0
+margin_bottom = 44.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "WFRP Combat Roller"
+align = 1
+valign = 1
+
+[node name="Melee" type="VBoxContainer" parent="."]
+editor/display_folded = true
+margin_left = 40.0
+margin_top = 70.0
+margin_right = 174.0
+margin_bottom = 264.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Melee"]
+margin_left = 47.0
+margin_right = 87.0
+margin_bottom = 14.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Melee"
+align = 1
+valign = 1
+
+[node name="BaseDamage" parent="Melee" instance=ExtResource( 1 )]
+margin_top = 18.0
+margin_bottom = 66.0
+title = "Damage:"
+
+[node name="WeaponSkill" parent="Melee" instance=ExtResource( 1 )]
+margin_top = 70.0
+margin_bottom = 118.0
+title = "WS:"
+
+[node name="HitModifier" parent="Melee" instance=ExtResource( 1 )]
+margin_top = 122.0
+margin_bottom = 170.0
+title = "Hit Mod:"
+
+[node name="Attack" type="Button" parent="Melee"]
+margin_top = 174.0
+margin_right = 134.0
+margin_bottom = 194.0
+text = "Attack"
+
+[node name="Ranged" type="VBoxContainer" parent="."]
+editor/display_folded = true
+margin_left = 223.0
+margin_top = 70.0
+margin_right = 357.0
+margin_bottom = 264.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Ranged"]
+margin_left = 44.0
+margin_right = 90.0
+margin_bottom = 14.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Ranged"
+align = 1
+valign = 1
+
+[node name="BaseDamage" parent="Ranged" instance=ExtResource( 1 )]
+margin_top = 18.0
+margin_bottom = 66.0
+title = "Damage:"
+
+[node name="BallisticSkill" parent="Ranged" instance=ExtResource( 1 )]
+margin_top = 70.0
+margin_bottom = 118.0
+title = "BS:"
+
+[node name="HitModifier" parent="Ranged" instance=ExtResource( 1 )]
+margin_top = 122.0
+margin_bottom = 170.0
+title = "Hit Mod:"
+
+[node name="Attack" type="Button" parent="Ranged"]
+margin_top = 174.0
+margin_right = 134.0
+margin_bottom = 194.0
+text = "Attack"
+
+[node name="Message" type="RichTextLabel" parent="."]
+margin_left = 40.0
+margin_top = 290.0
+margin_right = 357.0
+margin_bottom = 360.0
+text = "Message."
