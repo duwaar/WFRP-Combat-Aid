@@ -8,9 +8,6 @@ margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
-title = "Title:"
-tens_buttons = true
-ones_buttons = true
 
 [node name="TopContainer" type="HBoxContainer" parent="."]
 margin_right = 134.0
@@ -29,8 +26,8 @@ valign = 1
 margin_left = 60.0
 margin_right = 134.0
 margin_bottom = 24.0
-size_flags_horizontal = 11
-size_flags_vertical = 11
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="BottomContainer" type="HBoxContainer" parent="."]
 margin_top = 28.0
