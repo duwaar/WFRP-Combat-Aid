@@ -21,7 +21,7 @@ func roll_to_hit(var ulrich = false):
 	var results = ""
 	var hit = false
 	var hit_roll = d10()*10 + d10() + 1
-	var hit_chance = $WeaponSkill.get_value() + $HitModifier.get_value()
+	var hit_chance = $BallisticSkill.get_value() + $HitModifier.get_value()
 	var margin = hit_chance - hit_roll
 	
 	results += "Roll: " + str(hit_roll) + " against " + str(hit_chance)
