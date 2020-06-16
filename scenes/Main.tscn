@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Roller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Finder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Help.tscn" type="PackedScene" id=3]
+
+[node name="Main" type="Node2D"]
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_right = 400.0
+margin_bottom = 400.0
+
+[node name="Roller" parent="TabContainer" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Finder" parent="TabContainer" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Help" parent="TabContainer" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0

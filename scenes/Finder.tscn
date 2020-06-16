@@ -1,245 +1,88 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Finder.gd" type="Script" id=1]
-[ext_resource path="res://scripts/ControlPanel.gd" type="Script" id=2]
-[ext_resource path="res://scripts/HitBox.gd" type="Script" id=3]
-[ext_resource path="res://scripts/DamageBox.gd" type="Script" id=4]
-[ext_resource path="res://scripts/HelpPage.gd" type="Script" id=5]
+[ext_resource path="res://scenes/ValueInput.tscn" type="PackedScene" id=2]
 
-[node name="Finder" type="Node2D"]
+
+[node name="Finder" type="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 400.0
 script = ExtResource( 1 )
 
-[node name="ControlPanel" type="Node2D" parent="."]
-script = ExtResource( 2 )
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 400.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Title" type="Panel" parent="ControlPanel"]
-show_behind_parent = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 40.0
-margin_top = 20.0
-margin_right = 360.0
-margin_bottom = 50.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextArea" type="Label" parent="ControlPanel/Title"]
-margin_left = 10.0
-margin_top = 5.0
-margin_right = 310.0
-margin_bottom = 25.0
+[node name="Title" type="Label" parent="CenterContainer"]
+margin_left = 116.0
+margin_top = 10.0
+margin_right = 283.0
+margin_bottom = 24.0
 text = "WFRP Critical Effect Finder"
 align = 1
 valign = 1
 
-[node name="HitBox" type="SpinBox" parent="ControlPanel"]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 43.0
-margin_top = 80.0
-margin_right = 183.0
-margin_bottom = 110.0
-rect_pivot_offset = Vector2( -587.105, 0.368423 )
-hint_tooltip = "Enter the value that the attacker rolled to hit the defender.
-(Must be a value between 0 and 99)"
-max_value = 99.0
-value = 1.0
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="ControlPanel/HitBox"]
-margin_top = -20.0
-margin_right = 83.0
-margin_bottom = -6.0
-text = "To Hit"
-
-[node name="GridContainer" type="GridContainer" parent="ControlPanel/HitBox"]
-margin_left = -3.0
-margin_top = 40.0
-margin_right = 144.0
-margin_bottom = 80.0
-columns = 4
-
-[node name="Minus10Button" type="Button" parent="ControlPanel/HitBox/GridContainer"]
-margin_right = 33.0
-margin_bottom = 40.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 38.0
+margin_right = 400.0
+margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "-10"
+size_flags_stretch_ratio = 2.0
 
-[node name="Minus1Button" type="Button" parent="ControlPanel/HitBox/GridContainer"]
-margin_left = 37.0
-margin_right = 70.0
-margin_bottom = 40.0
+[node name="Hit" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 191.0
+margin_bottom = 68.0
+title = "Hit Roll:"
+value = 1
+
+[node name="CenterSpacer" type="Control" parent="HBoxContainer"]
+margin_left = 195.0
+margin_right = 204.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "-1"
+size_flags_stretch_ratio = 0.05
 
-[node name="Plus1Button" type="Button" parent="ControlPanel/HitBox/GridContainer"]
-margin_left = 74.0
-margin_right = 107.0
-margin_bottom = 40.0
+[node name="Damage" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 208.0
+margin_right = 400.0
+margin_bottom = 68.0
+title = "Critical Damage:"
+
+[node name="CenterSpacer2" type="Control" parent="."]
+margin_top = 110.0
+margin_right = 400.0
+margin_bottom = 111.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "+1"
+size_flags_stretch_ratio = 0.05
 
-[node name="Plus10Button" type="Button" parent="ControlPanel/HitBox/GridContainer"]
-margin_left = 111.0
-margin_right = 147.0
-margin_bottom = 40.0
+[node name="CalculateButton" type="Button" parent="."]
+margin_top = 115.0
+margin_right = 400.0
+margin_bottom = 149.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "+10"
-
-[node name="DamageBox" type="SpinBox" parent="ControlPanel"]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 220.0
-margin_top = 80.0
-margin_right = 360.0
-margin_bottom = 110.0
-rect_pivot_offset = Vector2( -587.105, 0.368423 )
-hint_tooltip = "Enter the damage done
-beyond the defender's
-remaining wounds.
-(Value must be between 0 and 10.)"
-max_value = 10.0
-value = 1.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="ControlPanel/DamageBox"]
-margin_top = -20.0
-margin_right = 83.0
-margin_bottom = -6.0
-text = "Critical Damage"
-
-[node name="GridContainer" type="GridContainer" parent="ControlPanel/DamageBox"]
-margin_top = 40.0
-margin_right = 89.0
-margin_bottom = 80.0
-columns = 2
-
-[node name="MinusButton" type="Button" parent="ControlPanel/DamageBox/GridContainer"]
-margin_right = 41.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "  -1  "
-
-[node name="PlusButton" type="Button" parent="ControlPanel/DamageBox/GridContainer"]
-margin_left = 45.0
-margin_right = 89.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "  +1  "
-
-[node name="CalculateButton" type="Button" parent="ControlPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 43.0
-margin_top = 180.0
-margin_right = 123.0
-margin_bottom = 210.0
 text = "Calculate"
 
-[node name="HelpButton" type="Button" parent="ControlPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 270.0
-margin_top = 180.0
-margin_right = 356.0
-margin_bottom = 210.0
-text = "Help"
+[node name="CenterSpacer3" type="Control" parent="."]
+margin_top = 153.0
+margin_right = 400.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
 
-[node name="OutputBox" type="Panel" parent="ControlPanel"]
-editor/display_folded = true
-show_behind_parent = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 40.0
-margin_top = 220.0
-margin_right = 360.0
-margin_bottom = 380.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextArea" type="RichTextLabel" parent="ControlPanel/OutputBox"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 290.0
-margin_bottom = 150.0
+[node name="Output" type="RichTextLabel" parent="."]
+margin_top = 158.0
+margin_right = 400.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
 text = "Result
 "
-
-[node name="HelpPage" type="Node2D" parent="."]
-visible = false
-script = ExtResource( 5 )
-
-[node name="TitleBox" type="Panel" parent="HelpPage"]
-margin_left = 40.0
-margin_top = 30.0
-margin_right = 360.0
-margin_bottom = 60.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="HelpPage/TitleBox"]
-margin_right = 320.0
-margin_bottom = 30.0
-text = "Help"
-align = 1
-valign = 1
-
-[node name="HelpBox" type="Panel" parent="HelpPage"]
-margin_left = 40.0
-margin_top = 90.0
-margin_right = 360.0
-margin_bottom = 320.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpPage/HelpBox"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 310.0
-margin_bottom = 220.0
-
-[node name="BackButton" type="Button" parent="HelpPage"]
-margin_left = 150.0
-margin_top = 340.0
-margin_right = 250.0
-margin_bottom = 370.0
-text = "Back"
-[connection signal="button_up" from="ControlPanel/HitBox/GridContainer/Minus10Button" to="ControlPanel/HitBox" method="_on_Minus10Button_button_up"]
-[connection signal="button_up" from="ControlPanel/HitBox/GridContainer/Minus1Button" to="ControlPanel/HitBox" method="_on_Minus1Button_button_up"]
-[connection signal="button_up" from="ControlPanel/HitBox/GridContainer/Plus1Button" to="ControlPanel/HitBox" method="_on_Plus1Button_button_up"]
-[connection signal="button_up" from="ControlPanel/HitBox/GridContainer/Plus10Button" to="ControlPanel/HitBox" method="_on_Plus10Button_button_up"]
-[connection signal="button_up" from="ControlPanel/DamageBox/GridContainer/MinusButton" to="ControlPanel/DamageBox" method="_on_MinusButton_button_up"]
-[connection signal="button_up" from="ControlPanel/DamageBox/GridContainer/PlusButton" to="ControlPanel/DamageBox" method="_on_PlusButton_button_up"]
-[connection signal="button_up" from="ControlPanel/CalculateButton" to="ControlPanel" method="_on_CalculateButton_button_up"]
-[connection signal="button_up" from="ControlPanel/HelpButton" to="." method="_on_HelpButton_button_up"]
-[connection signal="button_up" from="HelpPage/BackButton" to="." method="_on_BackButton_button_up"]
+[connection signal="button_up" from="CalculateButton" to="." method="_on_CalculateButton_button_up"]
