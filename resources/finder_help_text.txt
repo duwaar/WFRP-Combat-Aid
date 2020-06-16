@@ -1,13 +1,26 @@
-Welcome to the WFRP combat looker-upper for WFRP v2!
+Welcome to the WFRP combat aid for WFRP v2!
+===========================================
 
-The goal of this application is to take the burden of looking up numbers and effects off of you, the player or GM, so that you can focus more of your energy on the roleplaying that makes the game fun.
+The goal of this application is to take the burden of looking up effects, searching for rules, and calculating numbers off of you, the player or GM, so that you can focus more of your energy on the roleplaying that makes the game fun.
 
-Instructions:
+Instructions for the Critical Effect Finder:
+============================================
+
 - Roll 2d10 to hit, accounting for any special bonuses or penalties, and compare with your WS or BS characteristics, as normal.
 - Calculate damage, again accounting for SB and weapon bonus, TB and armor, Ulrich's fury, remaining wounds, and anything else you would normally.
 - Enter the number you rolled to hit and the amount of critical damage (zero if it wasn't a critical hit) and press calculate.
 
-That's it! That's all you have to do to get the hit location and critical-hit effect.
+Instructions for the Combat Roller:
+===================================
 
-Made with Godot 3.1.1
-Elaine Jeffery, 2020
+- Enter your Weapon Skill and your Ballistic Skill directly from your character's main profile.
+- Enter the total of all your advantages/disadvantages in the "Hit Modifier" field.
+- Enter the base damage of your weapon (i.e. if your SB is 3, and you are using a SB-3 weapon like a dagger, enter 0).
+- To calculate the results of your attempt, click the "attack" button.
+
+About this application:
+=======================
+
+Engine: Godot 3.1.1
+Author: Elaine Jeffery
+
