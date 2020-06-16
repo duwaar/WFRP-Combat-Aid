@@ -29,6 +29,10 @@ func d10():
 	return $"/root/global".d10()
 
 
+func dPercent():
+	return $"/root/global".dPercent()
+
+
 func get_hit_location(hit_roll):
 	return $"/root/global".get_hit_location(hit_roll)
 
@@ -58,7 +62,7 @@ func _on_CalculateButton_button_up():
 		if int($HBoxContainer/Hit.get_value()) == 0:
 			crit_value = 0
 		else:
-			var effect_roll = d10() * 10 + d10() + 1
+			var effect_roll = dPercent()
 			crit_value = int( crit_values[floor(effect_roll / 10)][int($HBoxContainer/Damage.get_value()) - 1] )
 			message += "Critical Effect Roll: " + str(effect_roll) + "\n"
 			message += "Critical Value: " + str(crit_value) + "\n"

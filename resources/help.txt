@@ -1,0 +1,28 @@
+# Welcome to the WFRP combat aid for WFRP v2!
+
+The goal of this application is to take the burden of looking up effects, searching for rules, and calculating numbers off of you, the player or GM, so that you can focus more of your energy on the roleplaying that makes the game fun.
+
+NOTE: You will not lose any data by changing to a different tab, but everything will be reset when you close the application.
+
+
+## Instructions for the Combat Roller:
+
+- Either your Weapon Skill or your Ballistic Skill directly from your character's main profile into the "Attack Skill" field.
+- Enter the total of all your advantages/disadvantages in the "Hit Modifier" field.
+- Enter the base damage of your weapon into the "Base Damage" field. (i.e. if your SB is 3, and you are using a SB-3 weapon like a dagger, enter 0.)
+- Click the "Attack" button to calculate the results of your attempt.
+
+
+## Instructions for the Critical Effect Finder:
+
+- Enter your unmodified hit roll into the "Hit Roll" field.
+- Enter the damage done in excess of the character's remaining wounds in the "Critical Damage" field.
+- Click the "Calculate" button.
+
+
+## About this application:
+
+Engine: Godot 3.1.1
+Author: Elaine Jeffery
+
+

@@ -11,7 +11,11 @@ func _ready():
 	
 	
 func d10():
-	return int(floor(randf() * 10))
+	return int( ceil(randf() * 10) )
+
+
+func dPercent():
+	return int( ceil(randf() * 100) )
 
 
 func load_from_json(path):
@@ -27,15 +31,15 @@ func load_from_json(path):
 		return {}
 
 
-func get_hit_location(hit_roll):
-	# Swap the digits from the to-hit roll.
+func get_hit_location(hit_roll): # hit_roll: int from 01 to (1)00
+	if hit_roll == 100:
+		hit_roll = 0
+
+	# Swap the digits.
 	var digit_10 = floor(hit_roll / 10)
 	var digit_1 = hit_roll % 10
 	var location_roll = digit_1 * 10 + digit_10
 	
-	if location_roll == 0:
-		location_roll = 100
-	
-	return str(hit_locations[location_roll - 1])
+	return str(hit_locations[location_roll])
 
 

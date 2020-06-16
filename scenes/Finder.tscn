@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/Finder.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ValueInput.tscn" type="PackedScene" id=2]
 
-
 [node name="Finder" type="VBoxContainer"]
 margin_right = 400.0
 margin_bottom = 400.0
@@ -36,7 +35,13 @@ size_flags_stretch_ratio = 2.0
 margin_right = 191.0
 margin_bottom = 68.0
 title = "Hit Roll:"
-value = 1
+tens_buttons = true
+ones_buttons = true
+show_sign = false
+show_percent = false
+value = 0
+max_value = 100
+min_value = 0
 
 [node name="CenterSpacer" type="Control" parent="HBoxContainer"]
 margin_left = 195.0
@@ -51,6 +56,13 @@ margin_left = 208.0
 margin_right = 400.0
 margin_bottom = 68.0
 title = "Critical Damage:"
+tens_buttons = true
+ones_buttons = true
+show_sign = false
+show_percent = false
+value = 0
+max_value = 100
+min_value = 0
 
 [node name="CenterSpacer2" type="Control" parent="."]
 margin_top = 110.0
